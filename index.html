@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ekaghni Mukherjee | Mission EKAGHNI-01</title>
+<meta name="description" content="Ekaghni Mukherjee, R&D Machine Learning Engineer. Deep learning, LLM systems, computer vision and a complete 87-lesson AI/ML curriculum, presented as a flight through space.">
+<meta name="author" content="Ekaghni Mukherjee">
+<meta property="og:title" content="Ekaghni Mukherjee | Mission EKAGHNI-01">
+<meta property="og:description" content="R&D Machine Learning Engineer. Models, production systems, open-source tools and an 87-lesson AI/ML curriculum.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#060918">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&family=Martian+Mono:wght@400;500&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=8">
+<script type="importmap">
+{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js" } }
+</script>
+</head>
+<body>
+
+<!-- Launch sequence (first visit only) -->
+<div class="boot" id="boot">
+  <div class="boot__inner">
+    <pre class="boot__log" id="bootLog" aria-hidden="true"></pre>
+    <div class="boot__count" id="bootCount" aria-hidden="true"></div>
+  </div>
+  <button class="boot__skip" id="bootSkip" type="button">Skip launch</button>
+</div>
+
+<canvas id="space" aria-hidden="true"></canvas>
+<div class="vignette" aria-hidden="true"></div>
+
+<a class="skip-link" href="#origin">Skip to content</a>
+
+<header class="topbar">
+  <a class="patch" href="#launch" aria-label="Back to launch">
+    <svg viewBox="0 0 48 48" width="34" height="34" aria-hidden="true">
+      <circle cx="24" cy="24" r="21" fill="none" stroke="currentColor" stroke-width="1.5"/>
+      <ellipse cx="24" cy="24" rx="21" ry="7" fill="none" stroke="var(--flare)" stroke-width="1.5" transform="rotate(-24 24 24)"/>
+      <circle cx="24" cy="24" r="7" fill="var(--ion)"/>
+      <circle cx="41" cy="16" r="2.4" fill="var(--flare)"/>
+    </svg>
+    <span>EKAGHNI-01</span>
+  </a>
+  <nav class="topnav" aria-label="Primary">
+    <a href="#flight-log">Flight log</a>
+    <a href="#payloads">Projects</a>
+    <a href="#satellites" class="hide-sm">Open source</a>
+    <a href="#academy">Academy</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<nav class="tracker" aria-label="Mission stages">
+  <ol id="trackerList"></ol>
+</nav>
+
+<div class="telemetry" aria-hidden="true">
+  <div><span class="telemetry__k">T+</span><span id="tElapsed">00:00:00</span></div>
+  <div><span class="telemetry__k">Range</span><span id="tRange">0.00 AU</span></div>
+  <div><span class="telemetry__k">Velocity</span><span id="tVel">0.0 km/s</span></div>
+</div>
+
+<main id="main">
+
+  <!-- 1. LAUNCH -->
+  <section class="stage stage--hero" id="launch" data-stage="Launch" data-planet="hero" data-side="right">
+    <div class="hero">
+      <p class="hero__status"><span class="pulse" aria-hidden="true"></span>R&amp;D Machine Learning Engineer at Telaverge Communications</p>
+      <h1 class="hero__name">
+        <span class="hero__line">Ekaghni</span>
+        <span class="hero__line hero__line--orbit">Mukherjee
+          <svg class="orbit" viewBox="0 0 1000 220" preserveAspectRatio="none" aria-hidden="true">
+            <path id="orbitPath" d="M20,150 C200,20 800,20 980,110 C860,210 160,230 20,150 Z" fill="none"/>
+          </svg>
+          <span class="satellite" aria-hidden="true"></span>
+        </span>
+      </h1>
+      <p class="hero__lede">I build deep learning and LLM systems, train them, and then make them survive production. Before that I pushed neural style transfer through a phone's GPU at 60 frames a second.</p>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="#origin">Start the flight</a>
+        <a class="btn btn--ghost" href="#academy">Go to the academy</a>
+      </div>
+    </div>
+    <p class="scroll-cue" aria-hidden="true">Scroll to fly</p>
+  </section>
+
+  <!-- 2. ORIGIN -->
+  <section class="stage" id="origin" data-stage="Origin" data-planet="terra" data-side="left">
+    <div class="panel panel--left">
+      <p class="stage__no">02</p>
+      <h2>Started on a phone GPU, ended up training transformers.</h2>
+      <p>I'm an ML engineer in the R&amp;D team at Telaverge Communications. My job covers the whole life of a model: choosing the approach, building and training it, tuning it, and deploying it as a service other teams depend on.</p>
+      <p>I came to machine learning from Android graphics. Building style transfer, face swap and photo editing on OpenGL ES, the NDK and FFmpeg taught me to think about memory and latency first. I still build ML systems that way.</p>
+      <p>I also like rebuilding things from scratch to see how they work inside. So far that list has a transformer, Stable Diffusion and a DQN agent that learned to race.</p>
+      <dl class="facts">
+        <div><dt>Base</dt><dd>New Delhi, India</dd></div>
+        <div><dt>Degree</dt><dd>B.Tech, Computer Science &amp; Engineering, MAKAUT (2020 to 2024), CGPA 8.89</dd></div>
+        <div><dt>School</dt><dd>Bal Bhavan Public School, New Delhi. Class XII 82%, Class X 90% (CBSE)</dd></div>
+        <div><dt>Works in</dt><dd>Python, PyTorch, TensorFlow, Java, Kotlin, C++, SQL</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- 3. FLIGHT LOG -->
+  <section class="stage" id="flight-log" data-stage="Flight log" data-planet="mars" data-side="right">
+    <div class="panel panel--left panel--wide">
+      <p class="stage__no">03</p>
+      <h2>Flight log</h2>
+      <p class="sub">Four burns, in order. Each one changed the trajectory.</p>
+      <ol class="burns">
+        <li class="burn">
+          <p class="burn__when"><time datetime="2022-09">Sep 2022</time> to <time datetime="2023-12">Dec 2023</time></p>
+          <h3>Android Developer, Cre Innovations</h3>
+          <p class="burn__where">Delhi</p>
+          <ul>
+            <li>Built image-heavy Android apps with neural style transfer and face swapping on custom OpenGL ES rendering pipelines.</li>
+            <li>Developed a security SDK: package verification, SHA-256 signature checks and Firebase App Check for enterprise auth.</li>
+            <li>Kept a real-time photo editor fast with the Android NDK and FFmpeg; RxJava and Retrofit for the reactive and network layers.</li>
+          </ul>
+        </li>
+        <li class="burn">
+          <p class="burn__when"><time datetime="2023-06">Jun 2023</time> to <time datetime="2023-09">Sep 2023</time></p>
+          <h3>Summer Intern, Persistent Systems</h3>
+          <p class="burn__where">Remote</p>
+          <ul>
+            <li>Backend API development and cross-system integration on enterprise projects, inside an agile, distributed team.</li>
+          </ul>
+        </li>
+        <li class="burn">
+          <p class="burn__when"><time datetime="2023-12">Dec 2023</time> to <time datetime="2024-07">Jul 2024</time></p>
+          <h3>Software Engineer Intern, Telaverge Communications</h3>
+          <p class="burn__where">Remote</p>
+          <ul>
+            <li>RAG pipelines on LangChain and LlamaIndex with FAISS and ChromaDB, running Llama 3.2 3B for domain Q&amp;A with retrieval under 200 ms.</li>
+            <li>Served Llama 3.2 3B, Qwen 2.5 Coder and LLaVA 1.6 through vLLM behind OpenAI-compatible APIs, using continuous batching and PagedAttention.</li>
+            <li>Multi-agent LangGraph workflows (research, code generation, summarisation) with tool calling and conditional routing, exposed via FastAPI.</li>
+            <li>LLaVA document understanding, LoRA fine-tuning of Flux Kontext for controlled generation, LSTM forecasting exported to ONNX.</li>
+          </ul>
+        </li>
+        <li class="burn burn--now">
+          <p class="burn__when"><time datetime="2024-08">Aug 2024</time> to now</p>
+          <h3>R&amp;D Machine Learning Engineer, Telaverge Communications</h3>
+          <p class="burn__where">Bengaluru</p>
+          <ul>
+            <li>RAG document intelligence with hybrid retrieval (BM25 plus dense embeddings). The work went into re-ranking and context compression to cut hallucinations, not just recall.</li>
+            <li>Generative modelling with VAEs for latent interpolation and Graph Autoencoders for unsupervised representation learning.</li>
+            <li>DQN agents with prioritised replay and target-network stabilisation, converging noticeably faster than vanilla Q-learning.</li>
+            <li>Attention LSTMs for log anomaly detection, tracked in Weights &amp; Biases; Isolation Forest ensembles cut mean time to detection by about 60%.</li>
+            <li>Containerised LLM inference on Docker and vLLM with model versioning, A/B tests and CI/CD rollouts.</li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 4. PAYLOADS -->
+  <section class="stage" id="payloads" data-stage="Projects" data-planet="ice" data-side="left">
+    <div class="panel panel--left panel--wide">
+      <p class="stage__no">04</p>
+      <h2>Payloads I built from the ground up</h2>
+      <p class="sub">Side projects where I wrote the model, the training loop, and sometimes the whole simulator.</p>
+      <div class="payloads">
+        <article class="payload payload--lead">
+          <h3>HelpSteer Transformer</h3>
+          <p class="payload__stack">PyTorch, Transformers</p>
+          <p>A 60M-parameter transformer with rotary position embeddings, SwiGLU and RMSNorm, built for attribute-conditioned generation. Learned embeddings injected at the input give explicit control over five response attributes: helpfulness, correctness, coherence, complexity and verbosity.</p>
+          <ul class="readouts">
+            <li><b>60M</b> parameters</li>
+            <li><b>48%</b> leaner than baselines</li>
+            <li><b>4,200</b> tokens/s inference</li>
+          </ul>
+        </article>
+        <article class="payload payload--lead">
+          <h3>Multi-track racing with Deep Q-Learning</h3>
+          <p class="payload__stack">PyTorch, PyGame</p>
+          <p>A Dueling Double DQN that learns to drive seven tracks from a 24-dimensional state (15 ray-cast sensors plus vehicle dynamics). I wrote the 60 FPS physics simulation myself. A curriculum moves the agent from ovals to figure-8s, with prioritised replay and τ = 0.001 soft target updates.</p>
+          <ul class="readouts">
+            <li><b>85%+</b> track completion</li>
+            <li><b>7</b> track layouts</li>
+            <li><b>0</b> expert demonstrations</li>
+          </ul>
+          <a class="link" href="https://github.com/Ekaghni/DQN-Reinforcement-Learning-Car-Model" target="_blank" rel="noopener">Source on GitHub</a>
+        </article>
+        <article class="payload">
+          <h3>Stable Diffusion from scratch</h3>
+          <p class="payload__stack">PyTorch, Diffusion, Gradio</p>
+          <p>The CLIP text encoder, U-Net denoiser and VAE decoder written by hand, with custom conditioning for style and composition. Mixed precision and attention slicing cut VRAM use by about 50% with no visible quality loss.</p>
+        </article>
+        <article class="payload">
+          <h3>Log anomaly detection</h3>
+          <p class="payload__stack">scikit-learn, Isolation Forest, MLflow</p>
+          <p>Unsupervised detection over server logs using statistical, n-gram and temporal features, with configurable real-time alerting. Mean time to detection fell by around 60% in production.</p>
+        </article>
+        <article class="payload">
+          <h3>Skin cancer classifier</h3>
+          <p class="payload__stack">PyTorch, Medical imaging</p>
+          <p>Multi-class dermatology classification on a small dataset: heavy augmentation, ResNet and EfficientNet transfer learning, weighted loss for imbalance and attention maps so predictions can be checked.</p>
+        </article>
+        <article class="payload">
+          <h3>Face Mesh Retouch</h3>
+          <p class="payload__stack">Android, OpenGL ES 3.0, NDK</p>
+          <p>Real-time face retouching on the phone GPU with MediaPipe face-mesh landmarks and custom GLSL shaders for smoothing, colour and geometry. The C++ path runs about 3x faster than Java at 60 FPS.</p>
+        </article>
+        <article class="payload">
+          <h3>Sentiment analysis service</h3>
+          <p class="payload__stack">NLTK, VADER, RoBERTa, Django</p>
+          <p>Scores brand comments with VADER and RoBERTa, emails an alert when sentiment shifts (watchdog plus SMTP), and exposes it all through a Django REST API tunnelled with Cloudflare.</p>
+          <a class="link" href="https://github.com/Ekaghni/sentiment_analysis_project" target="_blank" rel="noopener">Source on GitHub</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. SATELLITES -->
+  <section class="stage" id="satellites" data-stage="Open source" data-planet="gas" data-side="right">
+    <div class="panel panel--left">
+      <p class="stage__no">05</p>
+      <h2>Satellites in orbit</h2>
+      <p class="sub">Three Python packages on PyPI, each with tests, CI and honest notes on what it can't do.</p>
+      <ul class="sats">
+        <li class="sat">
+          <div class="sat__head"><h3>styletransfer-lite</h3><span class="ver">v0.1.0</span></div>
+          <p>Fast neural style transfer: 26 built-in styles, or any painting as the style. Runs on onnxruntime, so the install is megabytes instead of a full framework, and a 1024-pixel photo takes about half a second on a laptop CPU. CLI, GUI and video.</p>
+          <div class="sat__cmd"><code>pip install styletransfer-lite</code><button type="button" class="copy" data-copy="pip install styletransfer-lite">Copy</button></div>
+          <a class="link" href="https://github.com/Ekaghni/styletransfer-lite" target="_blank" rel="noopener">Repository</a>
+        </li>
+        <li class="sat">
+          <div class="sat__head"><h3>facetweak</h3><span class="ver">v0.2.0</span></div>
+          <p>Face retouching from the command line or Python. 23 landmark-guided adjustments to eyes, brows, nose, lips and jaw using smooth local warps, not a generative model, so texture and lighting stay real. CPU only, well under a second.</p>
+          <div class="sat__cmd"><code>pip install facetweak</code><button type="button" class="copy" data-copy="pip install facetweak">Copy</button></div>
+          <a class="link" href="https://github.com/Ekaghni/facetweak" target="_blank" rel="noopener">Repository</a>
+        </li>
+        <li class="sat">
+          <div class="sat__head"><h3>stylematch</h3><span class="ver">v0.1.3</span></div>
+          <p>An AI-text detector (neural, GPU optional) plus a writing-style comparison tool for the "do these sound like the same person?" question. CLI, Python API and a small desktop app.</p>
+          <div class="sat__cmd"><code>pip install "stylematch[ai]"</code><button type="button" class="copy" data-copy='pip install "stylematch[ai]"'>Copy</button></div>
+          <a class="link" href="https://github.com/Ekaghni/stylematch" target="_blank" rel="noopener">Repository</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 6. INSTRUMENTS -->
+  <section class="stage" id="instruments" data-stage="Instruments" data-planet="amber" data-side="left">
+    <div class="panel panel--left panel--wide">
+      <p class="stage__no">06</p>
+      <h2>Instruments on board</h2>
+      <p class="sub">The spectrum I work across, from classical ML to bare-metal graphics.</p>
+      <dl class="spectrum">
+        <div class="band"><dt>Deep learning</dt><dd>PyTorch, TorchVision, PyTorch Lightning, TensorFlow, Keras, ONNX</dd></div>
+        <div class="band"><dt>LLMs &amp; NLP</dt><dd>Transformers, LangChain, LangGraph, LlamaIndex, vLLM, FAISS, ChromaDB, Sentence-Transformers, NLTK, spaCy</dd></div>
+        <div class="band"><dt>Computer vision</dt><dd>OpenCV, Albumentations, TIMM, Detectron2, Ultralytics YOLOv8, MediaPipe</dd></div>
+        <div class="band"><dt>Classical ML</dt><dd>scikit-learn, XGBoost, LightGBM, CatBoost, Optuna, Hyperopt</dd></div>
+        <div class="band"><dt>Reinforcement learning</dt><dd>Gymnasium, Stable-Baselines3, Ray RLlib, DQN family</dd></div>
+        <div class="band"><dt>MLOps &amp; serving</dt><dd>Docker, Kubernetes, MLflow, Weights &amp; Biases, FastAPI, Streamlit, AWS S3 and EC2, CUDA</dd></div>
+        <div class="band"><dt>Android &amp; graphics</dt><dd>Java, Kotlin, Android NDK, OpenGL ES, GLSL, FFmpeg, RxJava, Retrofit</dd></div>
+        <div class="band"><dt>Backend &amp; data</dt><dd>Django, DRF, Flask, PostgreSQL, MongoDB, NumPy, Pandas, Matplotlib, Seaborn, Plotly</dd></div>
+        <div class="band"><dt>Tooling</dt><dd>Git, GitHub, Linux administration, Ansible, Jupyter</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- 7. ACADEMY -->
+  <section class="stage stage--academy" id="academy" data-stage="Academy" data-planet="galaxy" data-side="none">
+    <div class="academy">
+      <div class="academy__intro">
+        <p class="stage__no">07</p>
+        <h2>The academy</h2>
+        <p class="academy__lede">I designed, scripted, recorded and coded a complete AI/ML curriculum: from "what is a neuron" to a rate-limited, cached, queue-backed model API in Docker. Every lesson below is a star. Each chapter is a constellation, connected in the order it's taught.</p>
+        <ul class="stats">
+          <li><b id="statLessons">87</b> lessons</li>
+          <li><b id="statHours">19</b> hours of video</li>
+          <li><b id="statChapters">24</b> chapters</li>
+          <li><b>11</b> projects built on camera</li>
+        </ul>
+        <p class="academy__note">Taught in two tracks: a core track (chapters 1 to 8, Phase 2 and the maths bonus) and an extended track that adds twelve theory-and-project chapters on detection, generative art, diffusion, text forensics, medical AI and LLM agents.</p>
+      </div>
+
+      <div class="academy__controls" role="search">
+        <label class="search">
+          <span class="visually-hidden">Search lessons</span>
+          <input id="lessonSearch" type="search" placeholder="Search lessons, e.g. attention, Redis, ResNet" autocomplete="off">
+        </label>
+        <div class="filters" role="group" aria-label="Filter chapters">
+          <button type="button" class="chip is-on" data-filter="all" aria-pressed="true">Everything</button>
+          <button type="button" class="chip" data-filter="theory" aria-pressed="false"><i class="dot dot--theory"></i>Theory</button>
+          <button type="button" class="chip" data-filter="project" aria-pressed="false"><i class="dot dot--project"></i>Projects</button>
+          <button type="button" class="chip" data-filter="bonus" aria-pressed="false"><i class="dot dot--bonus"></i>Maths</button>
+          <button type="button" class="chip" data-filter="P2" aria-pressed="false">Phase 2</button>
+        </div>
+        <p class="match-count" id="matchCount" aria-live="polite"></p>
+      </div>
+
+      <figure class="starmap">
+        <canvas id="starmap" role="img" aria-label="Star map of all course lessons grouped by chapter. Use the lesson list below for a keyboard-friendly view."></canvas>
+        <div class="starmap__tip" id="starTip" hidden></div>
+        <figcaption>Hover a star to read its name, click to open the lesson log. Bigger stars are longer lessons.</figcaption>
+      </figure>
+
+      <div class="logs" id="logs"></div>
+    </div>
+  </section>
+
+  <!-- 8. CONTACT -->
+  <section class="stage stage--contact" id="contact" data-stage="Contact" data-planet="sun" data-side="none">
+    <div class="contact">
+      <p class="stage__no">08</p>
+      <h2>Open a channel</h2>
+      <p>Email is the fastest way to reach me. I'm always up for a conversation about LLM serving, retrieval that doesn't hallucinate, teaching ML, or squeezing image processing onto a phone.</p>
+      <a class="beacon" href="mailto:ekaghni.mukherjee@gmail.com">ekaghni.mukherjee@gmail.com</a>
+      <ul class="channels">
+        <li><a href="https://www.linkedin.com/in/ekaghni-mukherjee-8a1446210/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/Ekaghni" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://pypi.org/user/Ekaghni/" target="_blank" rel="noopener">PyPI</a></li>
+      </ul>
+    </div>
+    <footer class="footer">
+      <p>Mission EKAGHNI-01. Built and flown by Ekaghni Mukherjee, 2026. Planets, nebula and galaxy are generated live with Three.js shaders.</p>
+      <a href="#launch" class="link">Return to launch</a>
+    </footer>
+  </section>
+</main>
+
+<!-- Lesson detail drawer -->
+<aside class="drawer" id="drawer" aria-labelledby="drawerTitle" aria-hidden="true" tabindex="-1">
+  <div class="drawer__inner">
+    <button type="button" class="drawer__close" id="drawerClose" aria-label="Close lesson log">Close</button>
+    <p class="drawer__chapter" id="drawerChapter"></p>
+    <h3 id="drawerTitle"></h3>
+    <p class="drawer__meta" id="drawerMeta"></p>
+    <p class="drawer__body" id="drawerBody"></p>
+    <ul class="tags" id="drawerTags"></ul>
+    <div class="drawer__nav">
+      <button type="button" class="btn btn--ghost btn--sm" id="drawerPrev">Previous lesson</button>
+      <button type="button" class="btn btn--ghost btn--sm" id="drawerNext">Next lesson</button>
+    </div>
+  </div>
+</aside>
+
+<script src="js/course-data.js?v=8"></script>
+<script type="module" src="js/main.js?v=8"></script>
+</body>
+</html>
