@@ -3,6 +3,9 @@
 # Google AdMob
 google.com, pub-4369805505792105, DIRECT, f08c47fec0942fa0
 
+# InMobi (DIRECT; reseller list available after business info is added in the InMobi portal)
+inmobi.com, cede70f05598443689164e38ca3328b9, DIRECT, 83e75a7ae333ca9d
+
 # Unity Ads (list from Unity Dashboard > Monetization > Settings > App-ads.txt)
 adwmg.com, 159512, RESELLER, c9688a22012618e7
 appads.in, 106246, RESELLER
